@@ -38,6 +38,9 @@ function render(filtered) {
         <p>日本人：${item.japanese.toLocaleString()}人</p>
         <p>外国人：${item.foreign.toLocaleString()}人（${item.rate}%）</p>
         <p>傾向：${item.trend}</p>
+        <div class="text-right mt-4">
+  　　　　　<a href="details.html?city=${encodeURIComponent(item.name)}" class="text-white underline text-sm">詳細を見る</a>
+　　　　</div>
       </div>
     `;
     results.appendChild(div);
