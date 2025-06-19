@@ -37,8 +37,7 @@ function render(filtered) {
         <p>総人口：${item.total.toLocaleString()}人</p>
         <p>日本人：${item.japanese.toLocaleString()}人</p>
         <p>外国人：${item.foreign.toLocaleString()}人（${item.rate}%）</p>
-        <p>傾向：${item.trend}</p>
-      </div>
+        <p>傾向：${item.trend}</p><a href="details.html?city=${encodeURIComponent(item.name)}" class="text-blue-300 underline block mt-2">詳細を見る</a></div>
     `;
     results.appendChild(div);
   });
