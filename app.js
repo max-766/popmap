@@ -30,13 +30,15 @@ function render(filtered) {
   }
   filtered.forEach((item) => {
     const div = document.createElement("div");
-    div.className = "bg-white border border-gray-200 rounded-xl p-4 shadow";
+    div.className = "card-bg rounded-xl shadow overflow-hidden";
     div.innerHTML = `
-      <h2 class="text-lg font-semibold mb-2">${item.name}（${item.year}年）</h2>
-      <p>総人口：${item.total.toLocaleString()}人</p>
-      <p>日本人：${item.japanese.toLocaleString()}人</p>
-      <p>外国人：${item.foreign.toLocaleString()}人（${item.rate}%）</p>
-      <p>傾向：${item.trend}</p>
+      <div class="card-overlay">
+        <h2 class="text-lg font-semibold mb-2">${item.name}（${item.year}年）</h2>
+        <p>総人口：${item.total.toLocaleString()}人</p>
+        <p>日本人：${item.japanese.toLocaleString()}人</p>
+        <p>外国人：${item.foreign.toLocaleString()}人（${item.rate}%）</p>
+        <p>傾向：${item.trend}</p>
+      </div>
     `;
     results.appendChild(div);
   });
