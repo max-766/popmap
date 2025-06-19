@@ -25,14 +25,14 @@ const results = document.getElementById("results");
 function render(filtered) {
   results.innerHTML = "";
   if (filtered.length === 0) {
-    results.innerHTML = "<p>該当する市区町村が見つかりません。</p>";
+    results.innerHTML = "<p class='text-sm text-gray-500'>該当する市区町村が見つかりません。</p>";
     return;
   }
   filtered.forEach((item) => {
     const div = document.createElement("div");
-    div.className = "card";
+    div.className = "bg-white border border-gray-200 rounded-xl p-4 shadow";
     div.innerHTML = `
-      <h2>${item.name}（${item.year}年）</h2>
+      <h2 class="text-lg font-semibold mb-2">${item.name}（${item.year}年）</h2>
       <p>総人口：${item.total.toLocaleString()}人</p>
       <p>日本人：${item.japanese.toLocaleString()}人</p>
       <p>外国人：${item.foreign.toLocaleString()}人（${item.rate}%）</p>
