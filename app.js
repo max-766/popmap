@@ -21,7 +21,7 @@ function render(filtered) {
   filtered.forEach((item, index) => {
     const div = document.createElement("div");
     div.className = "card-bg rounded-xl shadow overflow-hidden";
-    div.innerHTML = `
+    div.innerHTML = `<a href="details.html?city=${encodeURIComponent(item.name)}" class="block">
       <div class="card-overlay">
         <h2 class="text-lg font-semibold mb-2">${item.name}（${item.year}年）</h2>
         <p class="mb-2">傾向：${item.trend}</p>
