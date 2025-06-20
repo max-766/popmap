@@ -44,11 +44,13 @@
             label: '日本人',
             data: japaneseData,
             backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            barThickness: 30
           },
           {
             label: '外国人',
             data: foreignData,
             backgroundColor: 'rgba(255, 99, 132, 0.8)',
+            barThickness: 30
           }
         ]
       },
@@ -57,10 +59,12 @@
         scales: {
           x: {
             stacked: false,
+            categoryPercentage: 0.5,
+            barPercentage: 1.0
           },
           y: {
             stacked: false,
-            beginAtZero: true,
+            beginAtZero: true
           }
         },
         plugins: {
