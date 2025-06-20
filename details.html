@@ -4,19 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>詳細情報 - 市区町村人口ビジュアライザー</title>
+  <title>詳細ページ - 市区町村人口</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-900">
   <div class="flex flex-col min-h-screen">
     <header class="p-4 bg-white shadow">
-      <h1 class="text-xl font-bold">詳細情報</h1>
+      <h1 class="text-xl font-bold">詳細ページ</h1>
     </header>
 
-    <main class="flex-1 max-w-screen-lg mx-auto w-full p-4 bg-white">
-      <h2 class="text-lg font-semibold mb-4">東京都 杉並区（2024年）</h2>
-      <canvas id="populationChart" width="400" height="200"></canvas>
+    <main class="flex-1 p-6 space-y-6 bg-white max-w-screen-md mx-auto w-full">
+      <canvas id="populationChart" height="200"></canvas>
+
+      <div class="text-left">
+        <a href="index.html" class="text-blue-600 underline">← TOPに戻る</a>
+      </div>
     </main>
 
     <footer class="bg-white border-t text-center text-sm text-gray-500 p-4">
@@ -24,6 +27,49 @@
       出典：e-Stat（政府統計ポータルサイト）など信頼できる公的統計データ。
     </footer>
   </div>
-  <script src="details.js"></script>
+
+  <script>
+    const ctx = document.getElementById('populationChart').getContext('2d');
+
+    const months = ["7月", "8月", "9月", "10月", "11月", "12月", "1月", "2月", "3月", "4月", "5月", "6月"];
+    const japaneseData = [5000, 5100, 5050, 4980, 5000, 5020, 5030, 5040, 4990, 4970, 4960, 4950];
+    const foreignData  = [200, 210, 190, 180, 185, 190, 195, 200, 205, 210, 215, 220];
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: '日本人',
+            data: japaneseData,
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+          },
+          {
+            label: '外国人',
+            data: foreignData,
+            backgroundColor: 'rgba(255, 99, 132, 0.8)',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: false,
+          },
+          y: {
+            stacked: false,
+            beginAtZero: true,
+          }
+        },
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
