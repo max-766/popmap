@@ -8,22 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
       datasets: [
         {
           label: "日本人",
-          data: [3000, 3200, 3100, 2900, 3000, 3100, 3000, 3100, 3050, 3200, 3150, 3300],
-          backgroundColor: "rgba(75, 192, 192, 0.6)",
+          data: [3200, 3100, 3150, 3250, 3300, 3400, 3350, 3280, 3320, 3380, 3450, 3500],
+          backgroundColor: "rgba(54, 162, 235, 0.6)"
         },
         {
           label: "外国人",
-          data: [300, 320, 310, 290, 300, 310, 300, 310, 305, 320, 315, 330],
-          backgroundColor: "rgba(255, 99, 132, 0.6)",
+          data: [200, 220, 210, 230, 240, 260, 250, 248, 252, 258, 260, 270],
+          backgroundColor: "rgba(255, 99, 132, 0.6)"
         }
       ]
     },
     options: {
       responsive: true,
       plugins: {
-        legend: {
-          position: "top"
-        },
+        legend: { position: "top" },
         title: {
           display: true,
           text: "直近12ヶ月の人口推移（例）"
