@@ -1,6 +1,9 @@
 const dummyData = [
   { name: "東京都 杉並区", pref: "東京都", year: 2020, total: 567000, japanese: 548000, foreign: 19000, rate: 3.3, trend: "増加中" },
-  { name: "大阪府 西成区", pref: "大阪府", year: 2020, total: 110000, japanese: 100000, foreign: 10000, rate: 9.1, trend: "横ばい" }
+  { name: "大阪府 西成区", pref: "大阪府", year: 2020, total: 110000, japanese: 100000, foreign: 10000, rate: 9.1, trend: "横ばい" },
+  { name: "北海道 札幌市", pref: "北海道", year: 2020, total: 1950000, japanese: 1900000, foreign: 50000, rate: 2.6, trend: "微増" },
+  { name: "福岡県 福岡市", pref: "福岡県", year: 2020, total: 1600000, japanese: 1540000, foreign: 60000, rate: 3.8, trend: "増加中" },
+  { name: "京都府 京都市", pref: "京都府", year: 2020, total: 1470000, japanese: 1430000, foreign: 40000, rate: 2.7, trend: "横ばい" }
 ];
 
 const prefectures = [
