@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>市区町村詳細情報</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>市区町村詳細ページ</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -12,16 +12,16 @@
       <h1 class="text-xl font-bold">市区町村詳細ページ</h1>
     </header>
 
-    <div class="flex flex-1">
-      <aside class="w-1/4 min-w-[200px] p-4 bg-white border-r">
-        <p class="text-sm text-gray-500">※選択された市区町村に関するグラフ表示予定</p>
+    <div class="flex flex-1 max-w-screen-lg mx-auto w-full">
+      <aside class="w-[240px] p-4 bg-gray-50 border-r">
+        <input id="search" type="text" placeholder="市区町村名で検索" class="w-full mb-2 border rounded p-2" />
+        <select id="prefectureSelect" class="w-full border rounded p-2">
+          <option value="">都道府県を選択</option>
+        </select>
       </aside>
 
-      <main class="flex-1 p-4 space-y-4">
-        <h2 class="text-lg font-semibold">ダミーグラフ表示エリア</h2>
-        <div class="w-full h-64 bg-white shadow rounded flex items-center justify-center text-gray-500">
-          グラフがここに表示されます（仮）
-        </div>
+      <main class="flex-1 p-4 space-y-4 bg-white"><div class="text-lg font-semibold mb-2">グラフエリア（仮）</div><div class="w-full h-64 bg-gray-200 flex items-center justify-center text-gray-500">ここにグラフが表示されます</div>
+        <!-- カード表示 -->
       </main>
     </div>
 
@@ -30,5 +30,6 @@
       出典：e-Stat（政府統計ポータルサイト）など信頼できる公的統計データ。
     </footer>
   </div>
+  <script src="app.js"></script>
 </body>
 </html>
