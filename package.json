@@ -1,0 +1,9 @@
+{
+  "name": "hokkaido-pop-import",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.42.3",
+    "xlsx": "^0.18.5",
+    "node-fetch": "^3.3.2"
+  }
+}
