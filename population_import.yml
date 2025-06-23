@@ -1,0 +1,28 @@
+name: Import Hokkaido Population
+
+on:
+  workflow_dispatch: # 手動実行可
+  schedule:
+    - cron: '0 12 5 * *'  # 毎月5日12:00 JST
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run population import
+        run: node import.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
